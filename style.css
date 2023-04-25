@@ -7,33 +7,43 @@ body {
   display: grid;
   place-items: center;
   height: 100vh;
+  overflow: hidden;
 }
 
 img {
-  width: 5rem;
-  animation: rolar 3s infinite;
+  width: 15rem;
+  position: absolute;
+  top: 40%;
+  background-color: transparent;
+
+  /* animation-name: fly;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-delay: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: both;
+  animation-play-state: paused; */
+
+  animation: fly 5s linear infinite;
 }
 
 .container {
   width: 100vw;
-  height: 10rem;
+  height: 100vh;
   display: flex;
   align-items: end;
-  background-color: green;
+  background-image: url('./sky.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-@keyframes rolar {
-  0% {
-    transform: translateX(0);
-    transform: rotate(-100deg);
+@keyframes fly {
+  from {
+    transform: translateX(-50vw);
   }
 
-  50% {
-    transform: translateX(100%);
-    transform: rotate(-100deg);
-  }
-
-  100% {
+  to {
     transform: translateX(100vw);
   }
 }
